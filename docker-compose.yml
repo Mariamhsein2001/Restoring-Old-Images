@@ -1,0 +1,50 @@
+version: '3'
+networks:
+  api-network:
+    driver: bridge
+
+services:
+  img-restor-interface:
+    stdin_open: true
+    tty: true
+    build:
+      context: ./Interface
+      dockerfile: Dockerfile
+    command: python app.py
+    ports:
+      - "5000:5000"
+    networks:
+      - api-network
+    environment:
+      - PORT=5000
+      - SCRATCH_RESTORATION_URL=http://host.docker.internal:5001/scratch_restoration
+      - SMUDGE_RESTORATION_URL=http://host.docker.internal:5001/smudged_restoration
+      - FADE_RESTORATION_URL=http://host.docker.internal:5002/faded_restoration
+
+  scratch-smudge-restoration-api:
+    stdin_open: true
+    tty: true
+    build:
+      context: ./scratch_smudge_restoration
+      dockerfile: Dockerfile
+    command: python app.py
+    ports:
+      - "5001:5001"
+    networks:
+      - api-network
+    environment:
+      - PORT=5001
+
+  fading-restoration-api:
+    stdin_open: true
+    tty: true
+    build:
+      context: ./fading_restoration
+      dockerfile: Dockerfile
+    command: python app.py
+    ports:
+      - "5002:5002"
+    networks:
+      - api-network
+    environment:
+      - PORT=5002

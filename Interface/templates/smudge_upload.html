@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smudge Restoration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+<div class="title">Smudge Restoration 
+</div>
+<div class="slogan">Upload an Image to Restore Smudged Areas</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <!-- Upload Form -->
+            <div class="upload-container">
+                <img src="/static/images/icon image.png" alt="image icon" style="width: 100px; height:100px;">
+                <p class="text-dark">Upload Image .jpg, .png, .gif</p>
+                <form id="upload-form" enctype="multipart/form-data" method="POST" action="/smudge_restore">
+                    <input type="file" id="image" name="image" accept="image/*" style="display: none;" onchange="uploadImage()">
+                    <button id="browse-btn" type="button" class="btn btn-primary">Upload </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <a href="/" class="previous">&laquo; Previous</a>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script>
+    // Function to handle file selection and form submission
+    function uploadImage() {
+        $('#upload-form').submit(); // Submit the form
+    }
+
+    // Trigger file input click event when the button is clicked
+    $('#browse-btn').click(function() {
+        $('#image').click();
+    });
+</script>
+</body>
+</html>

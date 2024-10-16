@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Restoration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+
+</head>
+<body>
+
+<div class="container">
+    <div class="title">
+        <img src="/static/images/logo.png" alt="logo" style="width: 100px; height:100px;">
+        RevivaPix
+    </div> 
+    <div class="slogan">Revive Your Photos with Our Advanced Restoration Techniques</div>
+    <div class="row justify-content-center align-items-center">
+        <!-- Faded Restoration -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/faded.png" alt="Faded Restoration" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Faded Restoration</h5>
+                    <p class="card-text">Bring back the vibrancy to your old and faded photographs.</p>
+                    <a href="/faded" class="btn btn-primary">Restore Faded Images</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scratched Restoration -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/scratched.png" alt="Scratched Restoration" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Scratched Restoration</h5>
+                    <p class="card-text">Eliminate scratches to bring photos back to life.</p>
+                    <a href="/scratched" class="btn btn-primary">Restore Scratched Images</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Smudged Restoration -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/images/smudged.png" alt="Smudged Restoration" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Smudged Restoration</h5>
+                    <p class="card-text">Remove smudges and stains from your treasured photographs.</p>
+                    <a href="/smudged" class="btn btn-primary">Restore Smudged Images</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

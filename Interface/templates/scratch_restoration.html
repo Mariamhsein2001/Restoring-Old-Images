@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scratch Restoration Results</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <header class="title-banner">
+        Image Restoration Results
+    </header>
+
+    <div class="container-comparison">
+        <div class="image-comparison">
+            <!-- Before Image (Uploaded) -->
+            <div class="image-container">
+                <img src="data:image/png;base64,{{ before_image }}" alt="Original Image">
+            </div>
+
+            <!-- Arrow -->
+            <div class="arrow">
+                &rarr;
+            </div>
+
+            <!-- After Image (Restored) -->
+            <div class="image-container">
+                <img src="data:image/png;base64,{{ result }}" alt="Restored Image">
+            </div>
+        </div>
+    </div>
+
+    <a href="/scratched" class="previous">&laquo; Previous</a>
+
+</body>
+</html>
