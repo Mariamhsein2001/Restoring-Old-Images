@@ -11,8 +11,8 @@ Revivapix is an AI-powered tool designed to bring your old, damaged photos back 
 ## Models Used
 Revivapix relies on two powerful AI models:
 
-pix2pix for handling scratches and smudges, based on the CycleGAN and pix2pix repository.
-Deep Convolutional Neural Networks (DCNN) for restoring faded images.
+- **pix2pix** for handling scratches and smudges, based on the CycleGAN and pix2pix repository.
+- **Deep Convolutional Neural Networks (DCNN)** for restoring faded images.
 These models have been fine-tuned for optimal performance on old and damaged photographs, ensuring the best possible restoration quality.
 
 ## Getting Started
